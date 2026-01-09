@@ -8,7 +8,7 @@ The code is evaluated on the **LaMP benchmark**, following the experimental setu
 
 ## Dataset: LaMP Benchmark
 
-ClusterRAG is evaluated on the **LaMP (Language Model Personalization) dataset**.
+ClusterRAG is evaluated on the **LaMP dataset**.
 
 Official LaMP dataset repository:  
 https://lamp-benchmark.github.io/download
