@@ -1,6 +1,6 @@
 # ClusterRAG (Anonymous Repository)
 
-This repository contains the implementation of **ClusterRAG**, a collaborative and hybrid user profiling framework for personalized text generation. ClusterRAG enhances retrieval-augmented generation by clustering similar users and leveraging both individual and collaborative profiles during generation.
+This repository contains the implementation of **ClusterRAG: Cluster-Based Collaborative Filtering for  Personalized Retrieval-Augmented Generation**, a collaborative and hybrid user profiling framework for personalized text generation. The work has been submitted for review. ClusterRAG enhances retrieval-augmented generation by clustering similar users and leveraging both individual and collaborative profiles during generation.
 
 The code is evaluated on the **LaMP benchmark**, following the experimental setup described in the accompanying paper.
 
@@ -11,7 +11,7 @@ The code is evaluated on the **LaMP benchmark**, following the experimental setu
 ClusterRAG is evaluated on the **LaMP (Language Model Personalization) dataset**.
 
 **Official LaMP dataset repository:**  
-https://github.com/LaMP-benchmark/LaMP
+https://lamp-benchmark.github.io/download
 
 ### Dataset Setup (Required)
 
@@ -19,7 +19,7 @@ https://github.com/LaMP-benchmark/LaMP
 2. Paste the downloaded files into the corresponding subdirectories inside the `data/` folder of this repository.
 3. Ensure the directory structure matches the expected LaMP format before running any scripts.
 
-> **Important:** The code will not run correctly unless the LaMP dataset is downloaded and placed in the correct subdirectories under `data/`.
+> **Important:** The code will not run correctly unless the LaMP dataset is downloaded and placed in the correct subdirectories under `data/`. The execution steps below use LaMP_1, which can be replaced by the name of the desired task.
 
 ---
 
@@ -28,7 +28,7 @@ https://github.com/LaMP-benchmark/LaMP
 - Python ≥ 3.8  
 - PyTorch  
 - HuggingFace Transformers  
-- ColBERT  
+- ColBERTv2 by PyLate  
 - HDBSCAN  
 - NumPy, pandas, scikit-learn  
 
@@ -109,13 +109,12 @@ python train_and_evaluate_llm.py \
 ```bash
 python zero_shot.py \
   --task LaMP_1 \
-  --model_name google/flan-t5-base \
+  --model_name google/flan-t5-xxl \
   --mode collab \
   --ranker colbert \
   --use_profile \
   --max_length 512 \
   --num_retrieved 1 \
-  --epochs 50 \
   --cluster_method hdbscan
 ```
 
