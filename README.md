@@ -1,6 +1,6 @@
 # ClusterRAG (Anonymous Repository)
 
-This repository contains the implementation of **ClusterRAG: Cluster-Based Collaborative Filtering for  Personalized Retrieval-Augmented Generation**, a collaborative and hybrid user profiling framework for personalized text generation. ClusterRAG enhances retrieval-augmented generation by clustering similar users and leveraging both individual and collaborative profiles during generation.
+This repository contains the implementation of **ClusterRAG: Cluster-Based Collaborative Filtering for  Personalized Retrieval-Augmented Generation**, a collaborative and hybrid user profiling framework for personalized text generation submitted for review. ClusterRAG enhances retrieval-augmented generation by clustering similar users and leveraging both individual and collaborative profiles during generation.
 
 The code is evaluated on the **LaMP benchmark**, following the experimental setup described in the paper.
 
