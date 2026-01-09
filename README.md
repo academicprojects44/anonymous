@@ -101,7 +101,7 @@ python train_and_evaluate_llm.py \
   --use_profile \
   --max_length 512 \
   --num_retrieved 1 \
-  --epochs 50 \
+  --epochs 30 \
   --cluster_method hdbscan
 ```
 
