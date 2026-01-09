@@ -41,10 +41,12 @@ Dependencies can be installed based on the imports used in the scripts. We are u
 All commands should be executed from the repository root.
 
 Step 1: Generate User Sets  
-```python user_embed/get_user_set.py --task LaMP_1 --use_date
+```bash
+python user_embed/get_user_set.py --task LaMP_1 --use_date ```
 
 Step 2: Generate User Embeddings  
-```python user_embed/get_user_embed.py --task LaMP_1 --ranker colbert
+```bash
+python user_embed/get_user_embed.py --task LaMP_1 --ranker colbert
 
 Step 3: Collaborative User Clustering  
 python collab_filter/collab_filter_users.py --task LaMP_1 --ranker colbert --cluster_method hdbscan
