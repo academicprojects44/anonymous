@@ -92,5 +92,16 @@ python zero_shot.py --task LaMP_1 --model_name google/flan-t5-base --mode collab
 ---
 
 ## Citation
+python zero_shot.py \
+  --task LaMP_1 \
+  --model_name google/flan-t5-base \
+  --mode collab \
+  --ranker colbert \
+  --use_profile \
+  --max_length 512 \
+  --num_retrieved 1 \
+  --epochs 50 \
+  --cluster_method hdbscan
+
 
 If you use this code, please cite the accompanying paper (citation will be added after the review process).
