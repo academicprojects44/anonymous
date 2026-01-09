@@ -41,31 +41,31 @@ Dependencies can be installed based on the imports used in the scripts. We are u
 All commands should be executed from the repository root.
 
 Step 1: Generate User Sets  
-python user_embed/get_user_set.py --task LaMP_1 --use_date
+```python user_embed/get_user_set.py --task LaMP_1 --use_date
 
 Step 2: Generate User Embeddings  
-python user_embed/get_user_embed.py --task LaMP_1 --ranker colbert
+```python user_embed/get_user_embed.py --task LaMP_1 --ranker colbert
 
 Step 3: Collaborative User Clustering  
 python collab_filter/collab_filter_users.py --task LaMP_1 --ranker colbert --cluster_method hdbscan
 
 Step 4: Merge Training Data  
-python data/merge_data_label.py --task LaMP_1 --stage train
+```python data/merge_data_label.py --task LaMP_1 --stage train
 
 Step 5: Merge Development Data  
-python data/merge_data_label.py --task LaMP_1 --stage dev
+```python data/merge_data_label.py --task LaMP_1 --stage dev
 
 Step 6: Merge Test Data  
-python data/merge_data_label.py --task LaMP_1 --stage test
+```python data/merge_data_label.py --task LaMP_1 --stage test
 
 Step 7: Retrieve Profiles (Training)  
-python retrieve_profiles.py --task LaMP_1 --mode collab --ranker colbert --stage train --use_date --cluster_method hdbscan
+```python retrieve_profiles.py --task LaMP_1 --mode collab --ranker colbert --stage train --use_date --cluster_method hdbscan
 
 Step 8: Retrieve Profiles (Development – Hybrid Mode)  
 python retrieve_profiles.py --task LaMP_1 --mode hybrid --ranker colbert --stage dev --use_date --cluster_method hdbscan
 
 Step 9: Retrieve Profiles (Test)  
-python retrieve_profiles.py --task LaMP_1 --mode collab --ranker colbert --stage test --use_date --cluster_method hdbscan
+```python retrieve_profiles.py --task LaMP_1 --mode collab --ranker colbert --stage test --use_date --cluster_method hdbscan
 
 ---
 
@@ -75,11 +75,11 @@ The final step supports either **fine-tuned LLMs** or **zero-shot LLMs**.
 
 ### Option A: Fine-Tuned LLM (Training + Evaluation)
 
-python train_and_evaluate_llm.py --task LaMP_1 --model_name google/flan-t5-base --mode collab --ranker colbert --use_profile --max_length 512 --num_retrieved 1 --epochs 50 --cluster_method hdbscan
+```python train_and_evaluate_llm.py --task LaMP_1 --model_name google/flan-t5-base --mode collab --ranker colbert --use_profile --max_length 512 --num_retrieved 1 --epochs 50 --cluster_method hdbscan
 
 ### Option B: Zero-Shot LLM Evaluation
 
-python zero_shot.py --task LaMP_1 --model_name google/flan-t5-base --mode collab --ranker colbert --use_profile --max_length 512 --num_retrieved 1 --epochs 50 --cluster_method hdbscan
+```python zero_shot.py --task LaMP_1 --model_name google/flan-t5-base --mode collab --ranker colbert --use_profile --max_length 512 --num_retrieved 1 --epochs 50 --cluster_method hdbscan
 
 ---
 
@@ -92,16 +92,4 @@ python zero_shot.py --task LaMP_1 --model_name google/flan-t5-base --mode collab
 ---
 
 ## Citation
-python zero_shot.py \
-  --task LaMP_1 \
-  --model_name google/flan-t5-base \
-  --mode collab \
-  --ranker colbert \
-  --use_profile \
-  --max_length 512 \
-  --num_retrieved 1 \
-  --epochs 50 \
-  --cluster_method hdbscan
-
-
 If you use this code, please cite the accompanying paper (citation will be added after the review process).
